@@ -14,7 +14,7 @@ struct ContentView: View {
     Hello **World** 👋🏻
 
     [This is a test](www.google.com)
-    """)
+    """, options: .fb9190672)
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,6 +22,10 @@ struct ContentView: View {
             Text("Hello **World** 👋🏻\n[This is a test](www.google.com)")
         }
     }
+}
+
+extension AttributedString.MarkdownParsingOptions {
+    static var fb9190672: AttributedString.MarkdownParsingOptions = AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)
 }
 
 struct ContentView_Previews: PreviewProvider {
